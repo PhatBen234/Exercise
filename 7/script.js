@@ -36,7 +36,7 @@ const questions = [
     ],
   },
   {
-    questions: "What is the capital city of Canada?",
+    question: "What is the capital city of Canada?",
     answers: [
       { text: "Toronto", correct: false },
       { text: "Ottawa", correct: true },
@@ -46,6 +46,15 @@ const questions = [
   },
 ];
 
+const playerName = prompt("Hello, Please insert yourname before the game begin: ");
+
+const greeting = document.createElement("h1");
+greeting.textContent = `Hello ${playerName}`;
+
+const simpleQuizTitle = document.querySelector("h1");
+
+simpleQuizTitle.replaceWith(greeting);
+
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -54,7 +63,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
-  console.log("Quiz started"); // Ghi nhật ký bắt đầu trò chơi
+  console.log("Quiz started"); // Console log messages for start Quiz
   currentQuestionIndex = 0;
   score = 0;
   nextButton.innerHTML = "Next";
@@ -89,7 +98,7 @@ function resetState() {
 }
 
 function selectAnswer(e) {
-  console.log("Answer selected"); // Ghi nhật ký chọn câu trả lời
+  console.log("Answer selected"); // Console log messages for selectAnswer
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
   if (isCorrect) {
@@ -108,7 +117,7 @@ function selectAnswer(e) {
 }
 
 function showScore() {
-  console.log("Quiz ended"); // Ghi nhật ký kết thúc trò chơi
+  console.log("Quiz ended"); // Console log messages for end Quiz
   resetState();
   questionElement.innerHTML = `You score ${score} out of ${questions.length}!`;
   nextButton.innerHTML = "Play Again";

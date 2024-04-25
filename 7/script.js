@@ -46,14 +46,14 @@ const questions = [
   },
 ];
 
-const playerName = prompt("Hello, Please insert yourname before the game begin: ");
+const playerName = prompt("Hello, Please insert your name before the game begins: ");
 
-const greeting = document.createElement("h1");
+const simpleQuizTitle = document.getElementById("simple-quiz-title");
+const greeting = document.getElementById("greeting");
+
+simpleQuizTitle.textContent = "Simple Quiz";
 greeting.textContent = `Hello ${playerName}`;
-
-const simpleQuizTitle = document.querySelector("h1");
-
-simpleQuizTitle.replaceWith(greeting);
+greeting.classList.remove("hidden");
 
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");

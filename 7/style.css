@@ -17,14 +17,6 @@ body{
     padding: 30px;
 }
 
-.app h1 {
-    font-size: 25px;
-    color: #001e4d;
-    font-weight: 600;
-    border-bottom: 1px solid #333;
-    padding-bottom: 30px;
-}
-
 .quiz{
     padding: 20px 0;
 }
@@ -74,3 +66,17 @@ body{
 .incorrect{
     background: #ff9393;
 }
+
+.header {
+    font-size: 25px;
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    margin-bottom: 20px; 
+}
+
